@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StudentContactDTO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Archetype - firstservice</a> &gt; <a href="index.source.html" class="el_package">com.student.service.model</a> &gt; <span class="el_source">StudentContactDTO.java</span></div><h1>StudentContactDTO.java</h1><pre class="source lang-java linenums">package com.student.service.model;
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+<span class="nc bnc" id="L9" title="All 94 branches missed.">@Data</span>
+public class StudentContactDTO {
+
+    @JsonProperty(value = &quot;id&quot;)
+<span class="nc" id="L13">    private Long id;</span>
+
+    @JsonProperty(value = &quot;addressline1&quot;)
+<span class="nc" id="L16">    private String addressLine1;</span>
+
+    @JsonProperty(value=&quot;addressline2&quot;)
+<span class="nc" id="L19">    private String addressLine2;</span>
+
+    @JsonProperty(value=&quot;landmark&quot;)
+<span class="nc" id="L22">    private String landMark;</span>
+
+    @JsonProperty(value=&quot;mobile&quot;)
+<span class="nc" id="L25">    private String mobile;</span>
+
+    @JsonProperty(value=&quot;homephone&quot;)
+<span class="nc" id="L28">    private String homePhone;</span>
+
+    @JsonProperty(value=&quot;district&quot;)
+<span class="nc" id="L31">    private String district;</span>
+
+    @JsonProperty(value=&quot;state&quot;)
+<span class="nc" id="L34">    private String state;</span>
+
+    @JsonProperty(value=&quot;pincode&quot;)
+<span class="nc" id="L37">    private String pincode;</span>
+
+    @JsonProperty(value=&quot;isprimary&quot;)
+<span class="nc" id="L40">    private Boolean isprimary;</span>
+
+    @JsonProperty(value = &quot;ispermanent&quot;)
+<span class="nc" id="L43">    private Boolean ispermanent;</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

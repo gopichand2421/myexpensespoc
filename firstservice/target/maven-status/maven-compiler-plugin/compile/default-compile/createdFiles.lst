@@ -1,0 +1,17 @@
+com\student\service\service\StudentService.class
+com\student\service\exceptionhandlers\InvalidRequestException.class
+com\student\service\repositories\StudentContactRepo.class
+com\student\service\exceptionhandlers\GlobalExceptionHandler.class
+com\student\service\StudentAppService.class
+com\student\service\model\StudentDTO.class
+com\student\service\entities\StudentContact.class
+com\student\service\entities\Student.class
+com\student\service\controller\StudentController.class
+com\student\service\configuration\AppConfig.class
+com\student\service\model\StudentDetailsDTO.class
+com\student\service\model\StudentContactDTO.class
+com\student\service\repositories\StudentRepo.class
+com\student\service\util\Patcher.class
+com\student\service\exceptionhandlers\StudentNotFoundException.class
+com\student\service\service\StudentServiceImpl.class
+com\student\service\exceptionhandlers\NoRecordsFoundException.class
