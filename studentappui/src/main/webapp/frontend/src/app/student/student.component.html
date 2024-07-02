@@ -1,0 +1,75 @@
+<div class="form-container">
+    <form class="student-form">
+        <div class="student-form-first-part">
+            <div class="form-title">
+                <h3>Student Registration</h3>
+            </div>
+            <div class="form-department-card">
+                <p class="form-heading">Department<span style="color: red;">*</span></p>
+                <input type="text" class="short-input" placeholder="ex:ECE">
+            </div>
+            <div class="form-username-card">
+                <p class="form-heading">Username<span style="color: red;">*</span></p>
+                <input type="text" class="short-input" placeholder="Username">
+            </div>
+            <div class="form-email-card">
+                <p class="form-heading">email<span style="color: red;">*</span></p>
+                <input type="email" class="medium-size-input" placeholder="ex=yourmail@mail.com" >
+            </div>
+        </div>
+        <!-- <hr> -->
+        <mat-divider></mat-divider>
+        <div id="form-details">
+            <div class="form-fistname-card">
+                <p class="form-heading">Firstname<span style="color: red;">*</span></p>
+                <input type="text" class="medium-size-input" placeholder="Firstname">
+            </div>
+            <div class="form-middlename-card">
+                <p class="form-heading">Middle Name<span style="color: red;">*</span></p>
+                <input type="text" class="medium-size-input" placeholder="Middle Name">
+            </div>
+        </div>
+        <div class="form-dataofbirth">
+            <p class="form-heading">Date of Birth<span style="color: red;">*</span></p>
+            <input type="date" class="short-input" placeholder="Firstname">
+        </div>
+        <button class="add-address-button btn" *ngIf="!hideButton" (click)="showForm()">Add Address</button>
+        <div *ngIf="isShowaddressform">
+            <div class="address-details" id="form-details">
+                <div class="form-addressline1-card">
+                    <p class="form-heading">Address Line 1<span style="color: red;">*</span></p>
+                    <input type="text" class="medium-size-input" placeholder="Address Line 1">
+                </div>
+                <div class="form-addressline2-card">
+                    <p class="form-heading">Address Line 2<span style="color: red;">*</span></p>
+                    <input type="text" class="medium-size-input" placeholder="Address Line 2" >
+                </div>
+                <div class="form-landmark-card">
+                    <p class="form-heading">Landmark<span style="color: red;">*</span></p>
+                    <input type="text" class="medium-size-input" placeholder="landmark">
+                </div>
+                <div class="form-mobile-card">
+                    <p class="form-heading">Mobile<span style="color: red;">*</span></p>
+                    <input type="text" class="medium-size-input" placeholder="Mobile" >
+                </div>
+                <div class="form-homephone-card">
+                    <p class="form-heading">Home-Phone<span style="color: red;">*</span></p>
+                    <input type="text" class="medium-size-input" placeholder="Homephone" >
+                </div>
+                <div class="form-district-card">
+                    <p class="form-heading">District<span style="color: red;">*</span></p>
+                    <input type="text" class="medium-size-input" placeholder="district" >
+                </div>
+                <div class="form-state-card">
+                    <p class="form-heading">State<span style="color: red;">*</span></p>
+                    <input type="text" class="medium-size-input" placeholder="state" >
+                </div>
+                <div class="form-pincode-card">
+                    <p class="form-heading">Pincode<span style="color: red;">*</span></p>
+                    <input type="text" class="medium-size-input" placeholder="pincode" >
+                </div>
+            </div>
+            <button class="add-address-button btn"  (click)="hideForm()">Remove</button>
+        </div>
+    </form>
+</div>
