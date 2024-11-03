@@ -2,40 +2,31 @@ package com.expenses.userservice.entities;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
-public class UserRole {
+@Table(name = "user_role")
+public class UserRole  extends   BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "role_name", nullable = false)
+    private String roleName;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "users_id", referencedColumnName = "id", nullable = false)
-    private Users users;
+    @OneToMany(mappedBy = "userRole")
+    private Set<UserRoleMapping> userRoleMappings;
 
-    private String role;
-
-    public Long getId() {
-        return id;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
-    public Users getUsers() {
-        return users;
+    public Set<UserRoleMapping> getUserRoleMappings() {
+        return userRoleMappings;
     }
 
-    public void setUsers(Users users) {
-        this.users = users;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
+    public void setUserRoleMappings(Set<UserRoleMapping> userRoleMappings) {
+        this.userRoleMappings = userRoleMappings;
     }
 }

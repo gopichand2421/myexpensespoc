@@ -1,34 +1,28 @@
 package com.expenses.userservice.entities;
 
-
 import jakarta.persistence.*;
 
-import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
-public class Users {
+@Table(name = "users")
+public class Users extends  BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String username;
     private String email;
+    private String username;
+    private String password;
 
-    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    private Set<UserRole> roles = new HashSet<>();
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name = "userdetails_id", referencedColumnName = "id")
-    private UserDetails userDetails;
+    @OneToMany(mappedBy = "users")
+    private Set<UserRoleMapping> userRoleMappings;
 
-    public Long getId() {
-        return id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUsername() {
@@ -39,27 +33,19 @@ public class Users {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPassword() {
+        return password;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public Set<UserRole> getRoles() {
-        return roles;
+    public Set<UserRoleMapping> getUserRoleMappings() {
+        return userRoleMappings;
     }
 
-    public void setRoles(Set<UserRole> roles) {
-        this.roles = roles;
-    }
-
-    public UserDetails getUserDetails() {
-        return userDetails;
-    }
-
-    public void setUserDetails(UserDetails userDetails) {
-        this.userDetails = userDetails;
+    public void setUserRoleMappings(Set<UserRoleMapping> userRoleMappings) {
+        this.userRoleMappings = userRoleMappings;
     }
 }

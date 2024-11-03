@@ -2,24 +2,23 @@ package com.expenses.userservice.model;
 
 import com.expenses.userservice.entities.UserRole;
 
-import java.io.Serializable;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-public class UsersDTO implements Serializable {
+public class UsersDTO {
 
-    private String username;
     private String email;
+    private String username;
+    private String password;
 
-    private Set<UserRoleDTO> roles = new HashSet<>();
-    private UserDetailsDTO userDetailsDTO;
+    private List<UserRolesDTO> userRoles;
 
-    public String getUsername() {
-        return username;
+    public List<UserRolesDTO> getUserRoles() {
+        return userRoles;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserRoles(List<UserRolesDTO> userRoles) {
+        this.userRoles = userRoles;
     }
 
     public String getEmail() {
@@ -30,19 +29,19 @@ public class UsersDTO implements Serializable {
         this.email = email;
     }
 
-    public Set<UserRoleDTO> getRoles() {
-        return roles;
+    public String getUsername() {
+        return username;
     }
 
-    public void setRoles(Set<UserRoleDTO> roles) {
-        this.roles = roles;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public UserDetailsDTO getUserDetailsDTO() {
-        return userDetailsDTO;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserDetailsDTO(UserDetailsDTO userDetailsDTO) {
-        this.userDetailsDTO = userDetailsDTO;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
