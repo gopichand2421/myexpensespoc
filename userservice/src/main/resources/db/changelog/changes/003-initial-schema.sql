@@ -1,4 +1,4 @@
-CREATE TABLE  user_details (
+CREATE TABLE  profile (
     id INT AUTO_INCREMENT PRIMARY KEY,          -- Unique identifier for user details
     user_id INT NOT NULL,                   -- Foreign key to users table
     first_name VARCHAR(50) NOT NULL,          -- User's first name
