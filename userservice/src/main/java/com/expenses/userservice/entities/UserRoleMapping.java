@@ -1,13 +1,18 @@
 package com.expenses.userservice.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "user_role_mapping")
-public class UserRoleMapping  extends BaseEntity{
+@Data
+public class UserRoleMapping{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer Id;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -15,21 +20,8 @@ public class UserRoleMapping  extends BaseEntity{
 
     @ManyToOne
     @JoinColumn(name = "role_id", nullable = false)
-    private UserRole userRole;
+    private UserRoles userRoles;
 
-    public Users getUsers() {
-        return users;
-    }
-
-    public void setUsers(Users users) {
-        this.users = users;
-    }
-
-    public UserRole getUserRole() {
-        return userRole;
-    }
-
-    public void setUserRole(UserRole userRole) {
-        this.userRole = userRole;
-    }
+    @Column(name = "assigned_at")
+    private Timestamp assignedAt;
 }
