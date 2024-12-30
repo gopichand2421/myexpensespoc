@@ -16,6 +16,7 @@ import com.expenses.userservice.util.ApplicationConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,6 +37,7 @@ public class UserHandlerService {
     private UserRoleRepository userRoleRepository;
     private UserRoleMappingRepository userRoleMappingRepository;
     private ProfileReposiotry profileReposiotry;
+    private PasswordEncoder passwordEncoder;
 //    private JwtService jwtService;
 //    private AuthenticationManager authenticationManager;
 
@@ -44,13 +46,15 @@ public class UserHandlerService {
     public UserHandlerService(UserRepository userRepository,
                               UserRoleRepository userRoleRepository,
                               UserRoleMappingRepository userRoleMappingRepository,
-                              ProfileReposiotry profileReposiotry
+                              ProfileReposiotry profileReposiotry,
+                              PasswordEncoder passwordEncoder
 //                              JwtService jwtService,
                               ){
         this.userRepository = userRepository;
         this.userRoleRepository = userRoleRepository;
         this.userRoleMappingRepository = userRoleMappingRepository;
         this.profileReposiotry = profileReposiotry;
+        this.passwordEncoder = passwordEncoder;
 //        this.jwtService = jwtService;
 //        this.authenticationManager = authenticationManager;
     }
@@ -89,7 +93,7 @@ public class UserHandlerService {
                 Users user = Users.builder()
                         .setEmail(usersDTO.getEmail())
                         .setUserName(usersDTO.getUsername())
-                        .setPassword(usersDTO.getPassword())
+                        .setPassword(passwordEncoder.encode(usersDTO.getPassword()))
                         .build();
 //                user.setEmail(usersDTO.getEmail());
 //                user.setUsername(usersDTO.getUsername());
