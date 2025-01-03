@@ -4,10 +4,8 @@ import com.expenses.userservice.entities.Users;
 import com.expenses.userservice.model.LoginDTO;
 import com.expenses.userservice.model.LoginResponseDTO;
 import com.expenses.userservice.repositories.UserRepository;
-import io.jsonwebtoken.Jwt;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
