@@ -9,3 +9,5 @@ databaseChangeLog:
       file: classpath:/db/changelog/changes/004-initial-schema.sql
   - include:
      file: classpath:/db/changelog/changes/005-initial-schema.sql
+  - include:
+      file: classpath:/db/changelog/changes/006-initial-schema.sql

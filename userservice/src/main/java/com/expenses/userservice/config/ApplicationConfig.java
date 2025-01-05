@@ -5,10 +5,10 @@ import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-//import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-public class AppConfig {
+public class ApplicationConfig {
 
     //Swagger configuration
     @Bean

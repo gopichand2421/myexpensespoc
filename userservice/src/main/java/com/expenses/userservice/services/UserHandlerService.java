@@ -94,6 +94,11 @@ public class UserHandlerService {
                         .setEmail(usersDTO.getEmail())
                         .setUserName(usersDTO.getUsername())
                         .setPassword(passwordEncoder.encode(usersDTO.getPassword()))
+                        .setAccountNonLocked(true)
+                        .setEnable(true)
+                        .setAccountExpired(true)
+                        .setCredentialsNonExpired(true)
+                        .setAccountExpired(true)
                         .build();
 //                user.setEmail(usersDTO.getEmail());
 //                user.setUsername(usersDTO.getUsername());

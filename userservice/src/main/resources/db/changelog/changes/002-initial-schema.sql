@@ -4,6 +4,10 @@ CREATE TABLE users (
     username VARCHAR(50) NOT NULL UNIQUE,     -- Unique username for the user
     email VARCHAR(100) NOT NULL UNIQUE,        -- Unique email for the user
     password VARCHAR(255) NOT NULL,            -- User password (hashed)
+    account_expired BIT NOT NULL DEFAULT 'FALSE',       -- User account expired
+    account_locked BIT NOT NULL DEFAULT 'FALSE',        -- user account account locked checker flag
+    credentials_expired BIT NOT NULL DEFAULT 'FALSE',   -- user account credentials expired
+    account_enabled BIT NOT NULL DEFAULT 'FALSE',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Record creation timestamp
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- Record update timestamp
     --role_id INT,                            -- Foreign key for user roles
